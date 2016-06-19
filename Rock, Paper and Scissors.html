@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+	<meta name="keywords" content="footer, links, icons" />
+    <link rel="stylesheet" href="RPFS.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <title>Rock, Paper or Scissors!</title>
+    </head>
+
+    <body>
+        
+        <div id="mainframe"></div>
+            
+         <div id="name"></div>
+             
+<a href="#" onclick="myFunction()" class="biliboard">Play</a>
+<script src="main.js"></script>
+    
+             <div id="output">
+          <p id="user"></p>
+      <p id="computer"></p>
+      <p id="result"></p>
+          </div>
+          
+         <footer class="footer-distributed">
+
+			<div class="footer-right">
+				<a href="https://www.facebook.com/ishu.bansal.cr7"><i class="fa fa-facebook"></i></a>
+				<a href="https://twitter.com/eshaanbansalcr7"><i class="fa fa-twitter"></i></a>
+			</div>
+
+			<div class="footer-left">
+<p class="footer-links">Created by Eshaan Bansal !</p>
+				
+			</div>
+
+		</footer>
+
+        <script type="text/javascript">
+            //<![CDATA[
+            function myFunction() {
+            var Intro = confirm ("Would you like to play 'Rock, Paper, Scissors' ?");
+            var userName = prompt("What's your good name?");
+            var userChoice = prompt("Do you choose rock, paper or scissors?");
+            
+            document.getElementById("name").innerHTML = userName + " Vs. Computer ";
+            document.getElementById("user").innerHTML = "User: " + userChoice.fontcolor("green");
+            
+            var computerChoice = Math.random();
+            
+            if (computerChoice < 0.38) {
+            	computerChoice = "rock";
+            } else if(computerChoice <= 0.71) {
+            	computerChoice = "paper";
+            } else {
+            	computerChoice = "scissors";
+            }
+            
+             document.getElementById("computer").innerHTML = "Computer: " + computerChoice.fontcolor("blue");
+            
+            
+            
+            var compare = function(choice1,choice2) {
+                if(choice1 === choice2) { 
+                    return "The result is a tie!";
+                }
+            else if(choice1 === "rock") {
+                
+                if(choice2 === "scissors") {
+                    return "Rock wins";
+                }
+                else { 
+                    return "Paper wins"; 
+                }
+                
+            } 
+            else if(choice1 === "paper") {
+                if(choice2 === "rock") {
+                    return "Rock wins";
+                }
+                else { 
+                    return "Scissors wins"; 
+                }
+            } 
+            else if(choice1 === "scissors") {
+                if(choice2 === "rock") {
+                    return "Rock wins";
+                }
+                else { 
+                    return "scissors wins"; } 
+            }
+            
+            else if(choice1 === "scissors") {
+                if(choice2 === "paper") {
+                    return "Scissors wins";
+                }
+                else { 
+                    return "Paper wins"; 
+                }
+            }
+            }
+            var result = compare(userChoice,computerChoice);
+            
+            document.getElementById("result").innerHTML =  "Result : " + result.fontcolor("red");
+            }
+            //]]>
+        </script>
+       
+    </body>
+
+</html>
